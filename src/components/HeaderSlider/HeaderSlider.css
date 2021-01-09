@@ -1,0 +1,53 @@
+.Slider {
+    margin-right: auto;
+    margin-left: auto;
+    width: 800px;
+    margin-top: 50px;
+    height: 300px;
+
+}
+
+.sliderPicture {
+    display: table-cell;
+    height: 300px;
+    width: 300px;
+    background-size: 300px 300px;
+    border-radius: 25px 0 0 25px;
+
+}
+
+.sliderDescription {
+    display: table-cell;
+    border-radius: 0 25px 25px 0;
+    height: 300px;
+    width: 500px;
+    padding: 25px;
+    background-color: #303030;
+}
+
+.sliderName {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.sliderName:hover {
+    color: gray;
+}
+
+.sliderUl {
+    padding: 0;
+    margin-top: 25px;
+}
+
+.sliderLi {
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: gray;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+.sliderLi:hover {
+    color: white;
+}

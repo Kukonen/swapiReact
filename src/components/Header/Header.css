@@ -1,0 +1,32 @@
+.headerBar {
+    font-family: Roboto;
+    background-color: #303030;
+    padding: 15px;
+    border-radius: 5px;
+    width: 900px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.nameSite {
+    font-size: 24px;
+    color: white;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.nameSite:hover {
+    color: gray;
+}
+
+.linkSpan {
+    font-size: 20px;
+    color: grey;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.linkSpan:hover {
+    color: white;
+}
