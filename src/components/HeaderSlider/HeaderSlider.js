@@ -1,6 +1,9 @@
 import React from "react";
 
 import './HeaderSlider.css'
+import './Loading.css'
+
+import SwapiService from "../../services/SwapiService";
 
 export default class HeaderSlider extends React.Component {
 
@@ -13,15 +16,7 @@ export default class HeaderSlider extends React.Component {
         description3: ''
     }
 
-    discriptionFuc = () => {
-        return (<ul className="sliderUl">
-        </ul>)
-    }
-
-    pictureBackground = {
-        backgroundImage: 'url(' + this.state.picture + ')'
-    }
-    render() {
+    discriptionFunc = () => {
         return (
             <div className="Slider">
                 <div className="sliderPicture" style={this.pictureBackground}></div>
@@ -35,5 +30,57 @@ export default class HeaderSlider extends React.Component {
                 </div>
             </div>
         )
+    }
+
+    noneOfDataFunc = () => {
+        return (
+            <div className="Slider">
+                <div className="loadingio-spinner-spin-nl9b1k0dsqf">
+                    <div className="ldio-2zdqozc8nej">
+                        <div>
+                            <div></div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                        <div>
+                            <div></div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        )
+    }
+
+    pictureBackground = {
+        backgroundImage: 'url(' + this.state.picture + ')'
+    }
+
+
+
+    render() {
+
+        
+
+        if (this.state.name === '')
+            return this.noneOfDataFunc()
+        else
+            return this.discriptionFunc()
+
     }
 }
