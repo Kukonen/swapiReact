@@ -7,13 +7,22 @@ import SwapiService from "../../services/SwapiService";
 
 export default class HeaderSlider extends React.Component {
 
+    swapiService = new SwapiService();
+
     state = {
+        error: false,
         slide: 1,
-        name: '',
+        name: null,
         picture: 'https://i.ytimg.com/vi/OoGhS-91uag/maxresdefault.jpg',
-        description1: '',
-        description2: '',
-        description3: ''
+        description1: null,
+        description2: null,
+        description3: null
+    }
+
+    constructor() {
+        super();
+
+        this.updateContent();
     }
 
     discriptionFunc = () => {
@@ -71,13 +80,25 @@ export default class HeaderSlider extends React.Component {
         backgroundImage: 'url(' + this.state.picture + ')'
     }
 
+    updateContent(){
 
+        this.swapiService.getPerson(1).then((person) => {
+            alert("hello")
+            this.setState({
+                name: person.name
+            })
+        }).catch((error) => {
+            alert(error)
+            this.setState({
+                error: true
+            })
+        })
+        alert("e")
+    }
 
     render() {
 
-        
-
-        if (this.state.name === '')
+        if (this.state.name === null)
             return this.noneOfDataFunc()
         else
             return this.discriptionFunc()
